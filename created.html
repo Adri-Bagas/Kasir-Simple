@@ -1,0 +1,233 @@
+<?php
+include 'koneksi.php';
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lexavac Web Design</title>
+
+  <!-- --------- Unicons Icons --------- -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="shortcut icon" href="favicon.SVG" type="image/SVG+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap" rel="stylesheet"> 
+  <!-- --------- CSS Files --------- -->
+  
+  <link rel="stylesheet" href="crt4.css">
+
+</head>
+<body>
+  <header>
+    
+  
+  
+    <nav>
+      <a href="" class="brand">
+        LX.
+      </a>
+    </div>
+  
+    <div class="container">
+        <div>
+        </div>
+  
+        </div>
+        <ul>
+        <li><a class="s"href="eth.php"><img src="./muak.svg" alt=""></a></li>
+          <li><a class="b"href="eth2.php"><img src="./et2.svg" alt=""></a></li>
+          <li><a class="c"href="eth3.php"><img src="./et3.svg" alt=""> </a></li>
+          <li><a class="d"href="eth4.php"><img src="./et4.svg" alt=""> </a></li>
+          <!-- <li><a class="b" href="displaybrg1.php"><img src="./b.svg" alt=""> Barang</a></li> -->
+        </ul> 
+      </div>
+
+    <div class="aes">
+        </div>
+        <h1 class="ha"> <img src="sc.svg" alt=""> </i></h1>
+
+      <div class="sq">
+        <div></div>
+      </div>
+
+      
+
+    </div>
+  </nav>
+
+
+    <div class="dash">
+      <div>
+        <h1>Dashboard.</h1>
+        <p>Hi , Welcome To Create Data Siswa</p>
+      </div>
+    </div>
+  
+
+
+    <!-- <form action="simpan.php" method="post">
+
+          <h4 class="ii">ID User</h4>:<input class="input" type="text" name="id_s" placeholder="ID User"><br>
+
+          <h4 class="ii">ID Item :</h4><input class="input" type="number" name="id_b" placeholder=" ID Item"><br>
+
+          <h4 class="ii">Name    :</h4><input class="input" type="text" name="name" placeholder="Name"><br>
+
+          <h4 class="ii">Tall    :</h4><input class="input" type="text" name="Tall" placeholder="Tall"><br>
+
+          <h4 class="ii">Birth   :</h4><input class="input" type="date" name="Birth" placeholder="Birth"><br>
+
+          <h4 class="ii">Gender  :</h4>
+          <select class="input" name="Gender">
+            <option value=""></option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <br>
+
+
+          <h4 class="ii">Addres  :</h4><input class="input" type="text" name="Addres" placeholder="Addres"><br>
+
+          <h4 class="ii">Age     :</h4><input class="input" type="text" name="age" placeholder="Age"><br>
+
+          <h4 class="ii">Grade   :</h4>
+          <select class="input" name="grade" >
+            <option value=""></option>
+            <option value="X">X</option>
+            <option value="XI">XI</option>
+            <option value="XII">XII</option>
+          </select>
+          <br>
+
+                                      
+          <h4 class="ii">Telp    :</h4><input class="input" type="number" name="telephone" placeholder="Telephone"><br>
+
+          <h4 class="ii">Email   :</h4><input class="input" type="email" name="email" placeholder="Email"><br>
+
+          <input class="submit" type="submit" name="simpan" value="simpan"> -->
+          
+          <form action="simpan.php" method="post">
+            <table>
+
+                <tr class="pi">
+                  <td class="nm">ID User</td>
+                  <td class="nm">:</td>
+                  <td><input class="input" type="text" name="id_s" placeholder="ID User"></td>
+  
+                <tr class="pi">
+                  <td class="nm">ID Item</td>
+                  <td class="nm">:</td>
+                  <td><input class="input" type="text" name="id_b" placeholder="ID Item"></td>
+                </tr>
+                <tr class="pi">
+                  <td class="nm">Name</td>
+                  <td class="nm">:</td>
+                  <td><input class="input" type="text" name="name" placeholder="Name"></td>
+                </tr>
+                <tr class="pi">
+                  <td class="nm">Tall</td>
+                  <td class="nm">:</td>
+                  <td><input class="input" type="text" name="Tall" placeholder="Tall"></td>
+                </tr>
+                <tr class="pi">
+                  <td class="nm">Birth</td>
+                  <td class="nm">:</td>
+                  <td><input class="input" type="date" name="Birth" placeholder="Birth"></td>
+                </tr>
+                <tr class="pi">
+                  <td class="nm">Gender</td>
+                  <td class="nm">:</td>
+                  <td>
+                    <select class="input" name="Gender">
+                      <option value=""></option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                  </td>
+                </tr>
+                
+                
+                
+                
+                
+                
+                    <tr class="pii">
+                      <td class="nm">Addres</td>
+                      <td class="nm">:</td>
+                      <td><input class="input" type="text" name="Addres" placeholder="Addres"></td>
+                    </tr>
+
+              <tr class="pii">
+                <td class="nm">Age</td>
+                <td class="nm">:</td>
+                <td><input class="input" type="text" name="age" placeholder="Age"></td>
+              </tr>
+
+              <tr class="pii">
+                <td class="nm">Grade</td>
+                <td class="nm">:</td>
+                <td><select class="input" name="grade" >
+                  <option value=""></option>
+                  <option value="X">X</option>
+                  <option value="XI">XI</option>
+                  <option value="XII">XII</option>
+                </select>
+              </td>
+              </tr>
+
+              <tr class="pii">
+                <td class="nm">Telp</td>
+                <td class="nm">:</td>
+                <td><input class="input" type="number" name="telephone" placeholder="Telp"></td>
+              </tr>
+
+              <tr class="pii">
+                <td class="nm">Email</td>
+                <td class="nm">:</td>
+                <td><input class="input" type="email" name="email" placeholder="Email"></td>
+              </tr>
+              
+              <tr class="piii">
+                <td class="nm"></td>
+                <td class="nm"></td>
+                <td><input class="submit" type="submit" name="simpan" value="simpan"></td>
+              </tr>
+
+
+
+
+
+            </table>
+          </form>
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    </form>
+    <div class="user">
+      <h5>Hi , Lexavac.</h5>
+      <img src="acc.svg" alt="">
+    </div>
+
+
+  </main>
+</header>
+
+</body>
+</html>
