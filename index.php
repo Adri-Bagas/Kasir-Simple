@@ -201,9 +201,9 @@ include 'koneksi.php';//memanggil
       "
   ?>
 
-    <h3 style="position: relative;left:100px; margin-left:12px;">Uang Masuk :<input type="text" class="input" id='uangMasuk'><button onclick='kal()' class='kal'>Kal</button></h3> 
+    <h3 style="position: relative;left:100px; margin-left:12px;">Money :<input type="text" class="input" id='uangMasuk'><button onclick='kal()' class='kal'>Kal</button></h3> 
 
-    <h3 style="position: relative;left:100px;">Uang Kembali : <input type="text" class="input" id='uangKembali'></h3>
+    <h3 style="position: relative;left:100px;">Return : <input type="text" class="input" id='uangKembali'></h3>
 
     <button class="submit" type="submit" name="simpan" value="simpan">Submit</button>
     <button class="submit" type="submit" name="simpan" value="simpan">Reset</button>
