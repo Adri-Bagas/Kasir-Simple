@@ -536,7 +536,15 @@ table tr:nth-child(odd) {
 }
 
 
-
+.container-all {
+  display: flex;
+  position: fixed;
+  z-index: -5;
+  height: 150%;
+  /* position: fixed; */
+  /* overflow-y: hidden; */
+  /* height: 70%; */
+}
 
 
 .input {

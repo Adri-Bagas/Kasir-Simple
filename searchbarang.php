@@ -20,7 +20,7 @@ include 'koneksi.php';//memanggil
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap" rel="stylesheet"> 
   <!-- --------- CSS Files --------- -->
   
-  <link rel="stylesheet" href="eteh.css">
+  <link rel="stylesheet" href="eth2search.css">
 
 </head>
 <body>
@@ -39,7 +39,7 @@ include 'koneksi.php';//memanggil
       </div>
 
       <ul>
-        <li><a class="s"href="index.php"><img src="./muak.svg" alt="">shees</a></li>
+        <li><a class="s"href="eth.php"><img src="./muak.svg" alt="">shees</a></li>
         <li><a class="b"href="eth2.php"><img src="./et2.svg" alt=""> shees</a></li>
         <li><a class="c"href="eth3.php"><img src="./et3.svg" alt=""> </a></li>
         <li><a class="d"href="eth4.php"><img src="./et4.svg" alt=""> </a></li>
@@ -62,10 +62,14 @@ include 'koneksi.php';//memanggil
   </nav>
 
   
-  
+  <div class="sub">
+    <div></div>
+    <h4> <a href="create.html">Create +</a>
+    </h4> 
+  </div>
   
   <div class="srcs">
-  <form action="searchfn.php" GET>
+  <form action="searchbarang.php" GET>
     <input class="src" type="text" name="search" placeholder="     Search Now..")>
   </form>
 </div>
@@ -83,7 +87,7 @@ include 'koneksi.php';//memanggil
       
     
     
-        <div class="table">
+      <div class="table">
           <table>
     
             <thead>
@@ -99,8 +103,12 @@ include 'koneksi.php';//memanggil
     
     <?php
     
-    $sql   = "SELECT * FROM barang"; 
+    $id = $_GET['search'];
+
+    $sql = "SELECT * FROM barang WHERE nama_barang LIKE '%$id%' ";
+    
     $query = mysqLi_query ($connect,$sql);
+
 
     $id = 0;
 
@@ -136,120 +144,14 @@ include 'koneksi.php';//memanggil
       </div>
   
   
-    <div class="container-keranjang">
-  
-      <div class="table">
-        <table>
-  
-          <thead>
-  
-            <tr>
-              <th>NO</th>
-              <th>Nama</th>
-              <th>Jumlah</th> 
-              <th>Total</th>
-              <th><i class="uil uil-setting"></i></th>
-            </tr>
-
-
-            <?php
-  
-  $sql1   = "SELECT * FROM tmp_trans"; 
-  $query1 = mysqLi_query ($connect,$sql1);
-
-  $id2 = 0;
-  $id3 = 10000;
-  while($data1 = mysqLi_fetch_array($query1)){  
-  
-    $id2++;
-    $id3++;
-  
-  echo 
-  "<tr>
-    <td>.$id2.</td> 
-    <td style='display: none;' id='$id2'>$data1[0]</td>
-    <td style='display: none;' id='$id3'>$data1[1]</td>
-    <td>.$data1[2].</td>
-    <td>.$data1[3].</td>
-    <td>.$data1[4].</td>
-    
-    <td>
-    <a onclick='plus($id2, $id3)'> <i class='uil uil-plus'></i> </a> | 
-    <a onclick='minus($id2, $id3)'> <i class='uil uil-minus'></i></a> |
-    <a onclick='hapus($id2, $id3)'> <i class='uil uil-trash-alt'></i></a>
-    </td>
-    </tr>
-    "
-  
-  ;
-}
-
-?>
+   
   
 </thead>
 </table>
 </div>
-<div class="ket">
-  <?php
-  
-    $SUM = "SELECT SUM(jml_harga) AS tot FROM tmp_trans ";
-    $query = mysqli_query($connect, $SUM);
-    $tot = mysqli_fetch_array($query);
-
-    echo"
-      <h2 style='position: relative;left:100px;'>Total Harga: Rp.$tot[tot],-</h2>
-      "
-  ?>
-
-    <h3 style="position: relative;left:100px; margin-left:12px;">Uang Masuk :<input type="text" class="input" id='uangMasuk'><button onclick='kal()' class='kal'>Kal</button></h3> 
-
-    <h3 style="position: relative;left:100px;">Uang Kembali : <input type="text" class="input" id='uangKembali'></h3>
-
-    <button class="submit" type="submit" name="simpan" value="simpan">Submit</button>
-    <button class="submit" type="submit" name="simpan" value="simpan">Reset</button>
-</div>
-</div>
-
-</div>
-
-</header>
-
-</body>
-
-<script>
-function plus(id2,  id3) {
-    let x = document.getElementById(id2).innerHTML;
-    let y = document.getElementById(id3).innerHTML;
-
-    location.replace("tambahKeranjang.php?id=" + x + "&id2=" + y);
-};
-
-function minus(id2,  id3) {
-    let x = document.getElementById(id2).innerHTML;
-    let y = document.getElementById(id3).innerHTML;
-
-    location.replace("kurangKeranjang.php?id=" + x + "&id2=" + y);
-};
-
-function hapus(id2,  id3) {
-    let x = document.getElementById(id2).innerHTML;
-    let y = document.getElementById(id3).innerHTML;
-
-    location.replace("hapusKeranjang.php?id=" + x + "&id2=" + y);
-};
-
-  
-  function kal(){
-    let a = <?php echo $tot['tot'] ?> ;
-
-    let b = parseInt(document.getElementById('uangMasuk').value);
-
-
-    let z = document.getElementById('uangKembali').value = b - a ;
-  }
-  
-</script>
 
 
 </html>
+<!-- hh -->
+<!-- hh -->
 <!-- hh -->

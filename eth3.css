@@ -450,7 +450,15 @@ nav .bc {
   z-index: 3;
 }
 
-
+.container-all {
+  display: flex;
+  position: fixed;
+  z-index: -5;
+  height: 150%;
+  /* position: fixed; */
+  /* overflow-y: hidden; */
+  /* height: 70%; */
+}
 
 
 .table {

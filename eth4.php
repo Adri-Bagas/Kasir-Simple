@@ -74,7 +74,7 @@ include 'koneksi.php';//memanggil
     </div>
     
     <div class="srcs">
-    <form action="searchfn.php" GET>
+    <form action="reportsearch.php" GET>
       <input class="src" type="text" name="search" placeholder="     Search Now..")>
     </form>
   </div>

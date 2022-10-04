@@ -39,7 +39,7 @@ include 'koneksi.php';//memanggil
       </div>
 
       <ul>
-        <li><a class="s"href="index.php"><img src="./muak.svg" alt="">shees</a></li>
+        <li><a class="s"href="eth.php"><img src="./muak.svg" alt="">shees</a></li>
         <li><a class="b"href="eth2.php"><img src="./et2.svg" alt=""> shees</a></li>
         <li><a class="c"href="eth3.php"><img src="./et3.svg" alt=""> </a></li>
         <li><a class="d"href="eth4.php"><img src="./et4.svg" alt=""> </a></li>
@@ -62,7 +62,11 @@ include 'koneksi.php';//memanggil
   </nav>
 
   
-  
+  <div class="sub">
+    <div></div>
+    <h4> <a href="create.html">Create +</a>
+    </h4> 
+  </div>
   
   <div class="srcs">
   <form action="searchfn.php" GET>
@@ -83,7 +87,7 @@ include 'koneksi.php';//memanggil
       
     
     
-        <div class="table">
+      <div class="table">
           <table>
     
             <thead>
@@ -99,8 +103,12 @@ include 'koneksi.php';//memanggil
     
     <?php
     
-    $sql   = "SELECT * FROM barang"; 
+    $id = $_GET['search'];
+
+    $sql = "SELECT * FROM barang WHERE nama_barang LIKE '%$id%' ";
+    
     $query = mysqLi_query ($connect,$sql);
+
 
     $id = 0;
 
@@ -252,4 +260,6 @@ function hapus(id2,  id3) {
 
 
 </html>
+<!-- hh -->
+<!-- hh -->
 <!-- hh -->
