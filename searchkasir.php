@@ -92,23 +92,23 @@ include 'koneksi.php';//memanggil
     
             <thead>
     
-              <tr>
-                <th>NO</th>
-                <th>Name</th>
-                <th>Price</th> 
-                <th>Category</th>
-                <th>Stock</th>
-                <th><i class="uil uil-setting"></i></th>
-              </tr>
     
-    <?php
+            <tr>
+              <th>ID</th>
+              <th>Name</th> 
+              <th>Telephone</th>
+              <th>Email</th>
+              <th><i class="uil uil-setting"></i></th>
+            </tr>
+  
+    
+            <?php
     
     $id = $_GET['search'];
 
-    $sql = "SELECT * FROM barang WHERE nama_barang LIKE '%$id%' ";
+    $sql = "SELECT * FROM datakasir WHERE nama LIKE '%$id%' ";
     
     $query = mysqLi_query ($connect,$sql);
-
 
     $id = 0;
 
@@ -127,7 +127,6 @@ include 'koneksi.php';//memanggil
     <td>.$data[1].</td>
     <td>.$data[2].</td>
     <td>.$data[3].</td>
-    <td>.$data[4].</td>
     
     <td> <a href='./addKeranjang.php?id=$data[0]'> <i class='uil uil-plus'></i> </a></td>
     </tr>"

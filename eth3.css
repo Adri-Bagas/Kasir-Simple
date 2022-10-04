@@ -451,8 +451,8 @@ nav .bc {
 }
 
 .container-all {
-  display: flex;
-  position: fixed;
+  /* display: flex; */
+  /* position: fixed; */
   z-index: -5;
   height: 150%;
   /* position: fixed; */

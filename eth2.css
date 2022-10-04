@@ -537,7 +537,7 @@ table tr:nth-child(odd) {
 
 
 .container-all {
-  display: flex;
+  /* display: flex; */
   position: fixed;
   z-index: -5;
   height: 150%;

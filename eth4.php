@@ -100,33 +100,36 @@ include 'koneksi.php';//memanggil
               <th><i class="uil uil-setting"></i></th>
             </tr>
   
-  <?php
-  
-  $sql   = "SELECT * FROM ssw"; 
-  $query = mysqLi_query ($connect,$sql);
-  while($data = mysqLi_fetch_array($query)){  
-  
-  
-  echo 
-  
-  
-  "<tr>
-  <td>.$data[id_s].</td> 
-  <td><a href='display2.php?id_b=".$data['id_b']."'>$data[id_b]</a></td>
-  <td><a href='display3.php?name=".$data['name']."'>$data[name]</a></td>
-  <td>.$data[telephone].</td>
-  <td>.$data[email].</td>
-  
-  <td>
-  <a  href='editd.php?id_s=".$data['id_s']."'> <i class='uil uil-edit-alt'></i> </a>
-  <a  href='delete.php?id_s=".$data['id_s']."'><i class='uil uil-trash-alt'></i></a>
-  </td>
-  </tr>"
-  
-  ;
-  }
-  
-  ?>
+            <?php
+    
+    $sql   = "SELECT * FROM datakasir"; 
+    $query = mysqLi_query ($connect,$sql);
+
+    $id = 0;
+
+
+    while($data = mysqLi_fetch_array($query)){  
+    
+    
+      $id++;
+
+
+    echo 
+    
+    
+    "<tr>
+    <td>.$id.</td>
+    <td>.$data[1].</td>
+    <td>.$data[2].</td>
+    <td>.$data[3].</td>
+    
+    <td> <a href='./addKeranjang.php?id=$data[0]'> <i class='uil uil-plus'></i> </a></td>
+    </tr>"
+    
+    ;
+    }
+    
+    ?>
   
           </thead>
         </table>
