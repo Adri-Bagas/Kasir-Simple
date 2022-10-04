@@ -62,7 +62,11 @@ include 'koneksi.php';//memanggil
   </nav>
 
   
-  
+  <div class="sub">
+    <div></div>
+    <h4> <a href="create.html">Create +</a>
+    </h4> 
+  </div>
   
   <div class="srcs">
   <form action="searchfn.php" GET>
@@ -79,7 +83,21 @@ include 'koneksi.php';//memanggil
           <p>Hi , Welcome To Table Data</p>
         </div>
       </div>
-    
+      <div style="position: absolute; left: 1200px; top: 186px; width: 500px">
+      <select class="input" id='kasir'>
+        <?php 
+        $sqlKasir = "SELECT * FROM datakasir";
+        $query2 = mysqli_query($connect, $sqlKasir);
+
+        while($datakas = mysqli_fetch_array($query2)){
+          echo "
+          <option value='$datakas[nama]'>$datakas[nama]</option>
+          ";
+        };
+        ?>
+        
+      </select>
+      </div>
       
     
     
@@ -201,12 +219,12 @@ include 'koneksi.php';//memanggil
       "
   ?>
 
-    <h3 style="position: relative;left:100px; margin-left:12px;">Money :<input type="text" class="input" id='uangMasuk'><button onclick='kal()' class='kal'>Kal</button></h3> 
+    <h3 style="position: relative;left:100px; margin-left:12px;">Uang Masuk :<input type="text" class="input" id='uangMasuk'><button onclick='kal()' class='kal'>Kal</button></h3> 
 
-    <h3 style="position: relative;left:100px;">Return : <input type="text" class="input" id='uangKembali'></h3>
+    <h3 style="position: relative;left:100px;">Uang Kembali : <input type="text" class="input" id='uangKembali'></h3>
 
-    <button class="submit" type="submit" name="simpan" value="simpan">Submit</button>
-    <button class="submit" type="submit" name="simpan" value="simpan">Reset</button>
+    <button class="submit" type="submit" name="simpan" value="simpan" onclick="lapor()">Submit</button>
+    <button class="submit" type="submit" name="simpan" value="simpan" onclick="reset()">Reset</button>
 </div>
 </div>
 
@@ -220,15 +238,17 @@ include 'koneksi.php';//memanggil
 function plus(id2,  id3) {
     let x = document.getElementById(id2).innerHTML;
     let y = document.getElementById(id3).innerHTML;
+    let d = parseInt(prompt('Tambah berapa?'));
 
-    location.replace("tambahKeranjang.php?id=" + x + "&id2=" + y);
+    location.replace("tambahKeranjang.php?id=" + x + "&id2=" + y + "&pls=" + d);
 };
 
 function minus(id2,  id3) {
     let x = document.getElementById(id2).innerHTML;
     let y = document.getElementById(id3).innerHTML;
+    let d = parseInt(prompt('Kurang berapa?'));
 
-    location.replace("kurangKeranjang.php?id=" + x + "&id2=" + y);
+    location.replace("kurangKeranjang.php?id=" + x + "&id2=" + y + "&mns=" + d);
 };
 
 function hapus(id2,  id3) {
@@ -246,6 +266,28 @@ function hapus(id2,  id3) {
 
 
     let z = document.getElementById('uangKembali').value = b - a ;
+  }
+
+
+  function hapus(id2, id3) {
+    let x = document.getElementById(id2).innerHTML;
+    let y = document.getElementById(id3).innerHTML;
+
+    location.replace("hapusKeranjang.php?id=" + x + "&id2=" + y);
+};
+
+  function lapor(){
+    let tot = <?php echo $tot['tot'] ?> ;
+    let kasir = document.getElementById('kasir').value;
+
+    location.replace("addLaporan.php?tot=" + tot + "&kasir=" + kasir);
+
+  }
+
+  function reset(){
+
+    location.replace("resetKeranjang.php");
+
   }
   
 </script>

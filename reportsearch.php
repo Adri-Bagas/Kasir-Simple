@@ -1,5 +1,7 @@
 <?php
 include 'koneksi.php';//memanggil
+
+$id = $_GET['search'];
 ?>
 
 
@@ -20,7 +22,9 @@ include 'koneksi.php';//memanggil
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap" rel="stylesheet"> 
   <!-- --------- CSS Files --------- -->
   
+  
   <link rel="stylesheet" href="eth4search.css">
+  <link rel="stylesheet" href="eth4.css">
 
 </head>
 <body>
@@ -63,14 +67,11 @@ include 'koneksi.php';//memanggil
 
   
   <div class="sub">
-    <div></div>
-    <h4> <a href="create.html">Create +</a>
-    </h4> 
   </div>
   
   <div class="srcs">
   <form action="reportsearch.php" GET>
-    <input class="src" type="text" name="search" placeholder="     Search Now..")>
+    <input class="src" type="text" name="search" placeholder="     Search Now.." value="<?php echo $id ?>">
   </form>
 </div>
 
@@ -93,19 +94,17 @@ include 'koneksi.php';//memanggil
             <thead>
     
               <tr>
-                <th>NO</th>
-                <th>Name</th>
-                <th>Price</th> 
-                <th>Category</th>
-                <th>Stock</th>
-                <th><i class="uil uil-setting"></i></th>
+              <th>NO</th>
+              <th>Kasir</th>
+              <th>Jumlah</th> 
+              <th>Tanggal</th>
+              <th>Jam</th>
+              <th></th>
               </tr>
     
     <?php
-    
-    $id = $_GET['search'];
 
-    $sql = "SELECT * FROM barang WHERE nama_barang LIKE '%$id%' ";
+    $sql = "SELECT * FROM laporan WHERE kasir LIKE '%$id%' OR tanggal LIKE '%$id%' ";
     
     $query = mysqLi_query ($connect,$sql);
 
@@ -121,15 +120,13 @@ include 'koneksi.php';//memanggil
 
     echo 
     
-    
     "<tr>
     <td>.$id.</td>
     <td>.$data[1].</td>
     <td>.$data[2].</td>
     <td>.$data[3].</td>
     <td>.$data[4].</td>
-    
-    <td> <a href='./addKeranjang.php?id=$data[0]'> <i class='uil uil-plus'></i> </a></td>
+    <td><i class='uil uil-file-search-alt'></i></td>
     </tr>"
     
     ;

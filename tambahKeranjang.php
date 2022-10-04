@@ -4,6 +4,7 @@
 
     $id = $_GET['id'];
     $id2 = $_GET['id2'];
+    $pls = $_GET['pls'];
 
     $select = "SELECT * FROM tmp_trans WHERE id = '$id' ";
 
@@ -13,7 +14,9 @@
 
     $jmlBRG = $data['jml_pembelian'];
 
-    $jmlBRGBR = $jmlBRG + 1;
+    $jmlBRGBR = $jmlBRG + $pls;
+
+    print($jmlBRGBR);
 
     $select2 = "SELECT * FROM barang WHERE id_barang = '$id2' ";
 

@@ -102,7 +102,7 @@ include 'koneksi.php';//memanggil
   
             <?php
     
-    $sql   = "SELECT * FROM laporan"; 
+    $sql   = "SELECT * FROM "; 
     $query = mysqLi_query ($connect,$sql);
 
     $id = 0;
