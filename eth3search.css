@@ -255,8 +255,13 @@ nav ul li .b img {
   height: 40px;
   width: 40px;
   color: var(--accent);
-  filter: grayscale(0%);
+  filter: grayscale(100%);
 
+}
+nav ul li .b img:hover {
+
+  filter: grayscale(0%);
+  transition: .3s;
 }
 
 nav ul li .c img {
@@ -267,13 +272,8 @@ nav ul li .c img {
   height: 40px;
   width: 40px;
   color: var(--accent);
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
 
-}
-nav ul li .c img:hover {
-
-  filter: grayscale(0%);
-  transition: .3s;
 }
 nav ul li .d img {
   /* opacity: .5; */
@@ -452,7 +452,6 @@ nav .bc {
 
 
 
-
 .table {
   color: var(--text-primary);
 }
@@ -479,7 +478,6 @@ nav .bc {
   
   
 }
-
 table {
   width: 100%;
   font-size: 13px;
@@ -536,15 +534,6 @@ table tr:nth-child(odd) {
 }
 
 
-.container-all {
-  /* display: flex; */
-  position: fixed;
-  z-index: -5;
-  height: 150%;
-  /* position: fixed; */
-  /* overflow-y: hidden; */
-  /* height: 70%; */
-}
 
 
 .input {

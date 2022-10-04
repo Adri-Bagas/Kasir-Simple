@@ -31,14 +31,17 @@ font-family: 'Poppins', sans-serif ;
 
 ::-webkit-scrollbar {
   width: 10px;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track {
   background: #111;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
+  border-radius: 5px;
 }
 
 
@@ -95,7 +98,8 @@ ul {
   .src {
     position: fixed;
     height: 40px;
-    left: 290px;
+    width: 20%;
+    left: 155px;
     top: 180px;
     border: none;
 
