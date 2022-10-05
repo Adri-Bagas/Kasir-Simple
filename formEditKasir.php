@@ -1,5 +1,13 @@
 <?php
 include 'koneksi.php';
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM datakasir WHERE id ='$id' ";
+
+$query = mysqli_query($connect, $sql);
+
+$data = mysqli_fetch_array($query);
 ?>
 
 
@@ -20,7 +28,7 @@ include 'koneksi.php';
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,100&display=swap" rel="stylesheet"> 
   <!-- --------- CSS Files --------- -->
   
-  <link rel="stylesheet" href="crt2.css">
+  <link rel="stylesheet" href="crt3.css">
 
 </head>
 <body>
@@ -112,35 +120,36 @@ include 'koneksi.php';
 
           <input class="submit" type="submit" name="simpan" value="simpan"> -->
           
-          <form action="insertBarang.php" method="POST">
+          <form action="editUser.php" method="POST">
             <table>
 
                 <tr class="pi">
-                  <td class="nm">Nama Barang</td>
+                  <td class="nm">Id Kasir</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="text" name="nama" placeholder="Nama Barang"></td>
+                  <td><input class="input" type="text" name="id" placeholder="ID" value="<?php echo $data[0] ?>" readonly></td>
   
                 <tr class="pi">
-                  <td class="nm">Harga</td>
+                  <td class="nm">Nama Kasir</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="number" name="harga" placeholder="Harga"></td>
+                  <td><input class="input" type="text" name="nama" placeholder="Nama Kasir" value="<?php echo $data[1] ?>" ></td>
                 </tr>
-              
+         
+                
+                
+                
                 
                 
                     <tr class="pii">
-                      <td class="nm">Kategori</td>
+                      <td class="nm">Telpon</td>
                       <td class="nm">:</td>
-                      <td><input class="input" type="text" name="Kategori" placeholder="Kategori"></td>
+                      <td><input class="input" type="text" name="telp" placeholder="Telp" value="<?php echo $data[2] ?>"></td>
                     </tr>
 
               <tr class="pii">
-                <td class="nm">Stock</td>
+                <td class="nm">Email</td>
                 <td class="nm">:</td>
-                <td><input class="input" type="number" name="stock" placeholder="Stock"></td>
-              </tr>
-
-              
+                <td><input class="input" type="text" name="email" placeholder="Email" value="<?php echo $data[3] ?>"></td>
+   
               <tr class="piii">
                 <td class="nm"></td>
                 <td class="nm"></td>

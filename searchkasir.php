@@ -94,7 +94,7 @@ include 'koneksi.php';//memanggil
     
     
             <tr>
-              <th>ID</th>
+              <th>NO</th>
               <th>Name</th> 
               <th>Telephone</th>
               <th>Email</th>

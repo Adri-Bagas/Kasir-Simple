@@ -123,7 +123,7 @@ include 'koneksi.php';//memanggil
     <td>.$data[2].</td>
     <td>.$data[3].</td>
     <td>.$data[4].</td>
-    <td><a href=''><i class='uil uil-file-search-alt'></i></a></td>
+    <td><a href='keterangan.php?id=$data[0]'><i class='uil uil-file-search-alt'></i></a></td>
     </tr>"
     
     ;

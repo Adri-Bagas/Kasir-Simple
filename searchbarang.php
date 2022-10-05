@@ -129,7 +129,10 @@ include 'koneksi.php';//memanggil
     <td>.$data[3].</td>
     <td>.$data[4].</td>
     
-    <td> <a href='./addKeranjang.php?id=$data[0]'> <i class='uil uil-plus'></i> </a></td>
+    <td> <a href='formEditBarang.php?id=$data[0]'> <i class='uil uil-plus'></i> </a> |
+      <a href='hapusbarang.php?id=$data[0]'><i class='uil uil-trash-alt'></i></a>
+    </td>
+    
     </tr>"
     
     ;

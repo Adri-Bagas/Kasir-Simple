@@ -20,7 +20,13 @@
         $updStock = "UPDATE `barang` SET `stock`='$stockBaru' WHERE id_barang ='$data[id_barang]'";
 
         $query4 = mysqli_query($connect, $updStock);
+
     };
 
-    header("Location: index.php?berhasilLapor");
+    $sql = "DELETE FROM barang WHERE stock < 0";
+
+    $query = mysqli_query($connect, $sql);
+
+
+    header("Location: index.php?Berhasil");
 ?>

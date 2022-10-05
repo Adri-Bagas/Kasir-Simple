@@ -92,7 +92,7 @@ include 'koneksi.php';//memanggil
           <thead>
   
             <tr>
-              <th>ID</th>
+              <th>NO/th>
               <th>Name</th> 
               <th>Telephone</th>
               <th>Email</th>
@@ -123,7 +123,9 @@ include 'koneksi.php';//memanggil
     <td>.$data[2].</td>
     <td>.$data[3].</td>
     
-    <td> <a href='./addKeranjang.php?id=$data[0]'> <i class='uil uil-plus'></i> </a></td>
+    <td> <a href='formEditKasir.php?id=$data[0]'> <i class='uil uil-plus'></i> </a> | 
+    <a href='hapusKasir.php?id=$data[0]'><i class='uil uil-trash-alt'></i></a>
+    </td>
     </tr>"
     
     ;

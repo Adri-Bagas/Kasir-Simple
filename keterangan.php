@@ -1,5 +1,7 @@
 <?php
 include 'koneksi.php';//memanggil
+
+$id = $_GET['id'];
 ?>
 
 
@@ -68,22 +70,11 @@ include 'koneksi.php';//memanggil
     <div class="container-barang">
     <div class="dash">
       <div>
-        <h1>Dashboard.</h1>
+        <h1>Laporan</h1>
         <p>Hi , Welcome To Table Data</p>
       </div>
     </div>
     
-    <div class="srcs">
-    <form action="reportsearch.php" GET>
-      <input class="src" type="text" name="search" placeholder="     Search Now..")>
-    </form>
-  </div>
-  
-      <div class="sub">
-        <div></div>
-        <h4> <a href="created.html">Create +</a>
-        </h4> 
-      </div>
   
   
       <div class="table">
@@ -93,16 +84,16 @@ include 'koneksi.php';//memanggil
   
             <tr>
               <th>NO</th>
-              <th>Kasir</th>
-              <th>Jumlah</th> 
-              <th>Tanggal</th>
-              <th>Jam</th>
+              <th>Id_laporan</th>
+              <th>Nama Barang</th> 
+              <th>Jumlah</th>
+              <th>jml_harga</th>
               <th></th>
             </tr>
   
             <?php
     
-    $sql   = "SELECT * FROM "; 
+    $sql   = "SELECT * FROM keterangan WHERE id_lap = '$id'"; 
     $query = mysqLi_query ($connect,$sql);
 
     $id = 0;

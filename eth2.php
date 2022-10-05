@@ -68,8 +68,8 @@ include 'koneksi.php';//memanggil
     <div class="container-barang">
     <div class="dash">
       <div>
-        <h1>Dashboard.</h1>
-        <p>Hi , Welcome To Table Data</p>
+        <h1>Barang.</h1>
+        <p>Hi , Welcome To Table Barang</p>
       </div>
     </div>
     
@@ -92,11 +92,11 @@ include 'koneksi.php';//memanggil
           <thead>
   
             <tr>
-              <th>ID</th>
-              <th>Item code</th>
-              <th>Name</th> 
-              <th>Telephone</th>
-              <th>Email</th>
+              <th>NO</th>
+              <th>Nama_barang</th>
+              <th>Harga</th> 
+              <th>Kategori</th>
+              <th>Stock</th>
               <th><i class="uil uil-setting"></i></th>
             </tr>
   
@@ -124,7 +124,9 @@ include 'koneksi.php';//memanggil
     <td>.$data[3].</td>
     <td>.$data[4].</td>
     
-    <td> <a href='./addKeranjang.php?id=$data[0]'> <i class='uil uil-plus'></i> </a></td>
+    <td> <a href='formEditBarang.php?id=$data[0]'> <i class='uil uil-plus'></i> </a> |
+      <a href='hapusbarang.php?id=$data[0]'><i class='uil uil-trash-alt'></i></a>
+    </td>
     </tr>"
     
     ;

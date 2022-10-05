@@ -1,5 +1,13 @@
 <?php
 include 'koneksi.php';
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM barang WHERE id_barang = '$id'";
+
+$query = mysqli_query($connect, $sql);
+
+$arrBRG = mysqli_fetch_array($query);
 ?>
 
 
@@ -112,18 +120,26 @@ include 'koneksi.php';
 
           <input class="submit" type="submit" name="simpan" value="simpan"> -->
           
-          <form action="insertBarang.php" method="POST">
+          <form action="editBarang.php" method="POST">
             <table>
+
+
+                <tr class="pi">
+                  <td class="nm">Id Barang</td>
+                  <td class="nm">:</td>
+                  <td><input class="input" type="text" name="id_barang" placeholder="Nam_Barang" value="<?php echo $arrBRG[0]?>" readonly></td>
+                </tr>
 
                 <tr class="pi">
                   <td class="nm">Nama Barang</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="text" name="nama" placeholder="Nama Barang"></td>
+                  <td><input class="input" type="text" name="nama" placeholder="Nama Barang" value="<?php echo $arrBRG[1]?>"></td>
+                </tr>
   
                 <tr class="pi">
                   <td class="nm">Harga</td>
                   <td class="nm">:</td>
-                  <td><input class="input" type="number" name="harga" placeholder="Harga"></td>
+                  <td><input class="input" type="number" name="harga" placeholder="Harga" value="<?php echo $arrBRG[2]?>"></td>
                 </tr>
               
                 
@@ -131,13 +147,13 @@ include 'koneksi.php';
                     <tr class="pii">
                       <td class="nm">Kategori</td>
                       <td class="nm">:</td>
-                      <td><input class="input" type="text" name="Kategori" placeholder="Kategori"></td>
+                      <td><input class="input" type="text" name="Kategori" placeholder="Kategori" value="<?php echo $arrBRG[3]?>"></td>
                     </tr>
 
               <tr class="pii">
                 <td class="nm">Stock</td>
                 <td class="nm">:</td>
-                <td><input class="input" type="number" name="stock" placeholder="Stock"></td>
+                <td><input class="input" type="number" name="stock" placeholder="Stock" value="<?php echo $arrBRG[4]?>"></td>
               </tr>
 
               
